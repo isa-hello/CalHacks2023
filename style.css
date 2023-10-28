@@ -19,8 +19,8 @@
     justify-content: space-between;
 }
 .logo {
-    width: 20%;
-    height: 20%;
+    width: 22%;
+    height: 22%;
     cursor: pointer;
 }
 .navbar ul li{
@@ -80,18 +80,23 @@ button{
 }
 span{
     background: #009688;
-    height: 100%;
-    width: 0;
+    height: 0;
+    width: 100%;
     border-radius: 25px;
     position: absolute;
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 button:hover span{
-    width: 100%;
+    height: 100%;
+    transition: 0.9s;
 }
 button:hover{
     border: none;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom, yellow 50%, yellow 50%);
 }
