@@ -1,92 +1,67 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>DermaScan</title>
-    </head>
-    <body>
-        <link rel="stylesheet" href="style.css">
-        <div class="banner">
-            <div class="navbar">
-                <img src="http://imageshack.com/i/po11ErGdp" class="logo">
-                <ul>
-                    <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
-                    <li><a href="http://127.0.0.1:5500/.vscode/aboutIndex.html">About</a></li>
-                </ul>
-                </div>
-                <div class = "content">
-                    <style>
-                        h1{
-                            font-family: 'monospace'
-                        }
-                    </style>
-                    <h1>DermaScan</h1>
-
-                    <p>Dermascan is an AI tool that diagnoses skin conditions by analyzing<br> user-submitted photos or links, matching them to a comprehensive database,<br> and offering treatment options and skincare information for better skin health.</p>
-            
-                    <button type = "button" id ="uploadButton"><span></span>Upload your Image</button>
-                    <a href="http://127.0.0.1:5500/CalHacks2023/.vscode/submitIndex.html"></a>
-                    <button type = "button"><span></span>Submit</button>
-
-                    <input type="file" id="fileInput" style="display: none;">
-                    <div id="previewContainer">
-                        <img id="previewImage">
-                    </div>
-                    
-                    <script>
-                        /*for passing the image to the AI later*/
-                        let imageData = null;
-
-
-                        document.getElementById('uploadButton').addEventListener('click', function() {
-                            document.getElementById('fileInput').click();
-                        });
-
-                        document.getElementById('fileInput').addEventListener('change', function() {
-                            const file = this.files[0];
-                            if (file) {
-                                const reader = new FileReader();
-                                reader.onload = function(e) {
-                                    const image = document.getElementById('previewImage');
-                                    image.src = e.target.result;
-                                    image.style.display = 'block';g
-
-                                    imageData = e.target.result;
-                                }
-                                reader.readAsDataURL(file);
-                            }
-                        });
-
-                        document.getElementById('submitButton').addEventListener('click', function() {
-            // You can add your AI processing logic here
-            if (imageData) {
-                // Example: Checking if the image has a skin disease (replace with your AI logic)
-                const hasSkinDisease = true;
-
-                if (imageData=Eczema) {
-                    alert("Description: Eczema is a chronic skin condition that results in red, itchy, and inflamed patches of skin. It can vary in severity and may be triggered by various factors, including allergens and irritants. Treatment Response: The treatment for eczema involves: Moisturization: Keeping the skin well-hydrated with emollients and moisturizers. Topical Corticosteroids: Prescribed creams or ointments containing corticosteroids to reduce inflammation and itching. Avoiding Triggers: Identifying and avoiding triggers, such as certain soaps, detergents, or allergens. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if (imageData=WartsMolluscum){
-                    alert("Description: Warts and molluscum are viral skin conditions that result in raised, flesh-colored, or small, pearly bumps on the skin. They are contagious and can appear on various parts of the body. Treatment Response: Treatment options include: Cryotherapy: Freezing the growths with liquid nitrogen. Topical Medications: Over-the-counter or prescribed topical medications. **In some cases, they may resolve on their own over time. Consult a dermatologist for treatment options. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if (imageData=Melanoma){
-                    alert("Description: Melanoma is a serious form of skin cancer. It often presents as moles with changes in size, shape, color, or irregular borders. Early detection is crucial as melanoma can be aggressive. Treatment Response: If you suspect melanoma or notice changes in moles, consult a dermatologist immediately. Treatment involves surgical removal of the affected tissue and may include lymph node evaluation for advanced cases. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if (imageData=AtopicDermatitis){
-                    alert("Description: Atopic dermatitis, commonly referred to as eczema, is a chronic inflammatory skin condition that results in red, itchy, and inflamed patches of skin. It is often characterized by a cycle of flare-ups and remissions. Eczema can be caused or exacerbated by various factors, including genetics, environmental triggers, and a compromised skin barrier. Treatment Response: The treatment for atopic dermatitis includes: Moisturization: Keeping the skin well-hydrated with emollients and moisturizers to repair the skin barrier. Topical Corticosteroids: Prescribed creams or ointments containing corticosteroids to reduce inflammation and itching during flare-ups. Topical Calcineurin Inhibitors: In some cases, non-steroidal medications like tacrolimus or pimecrolimus are used to manage inflammation. Avoiding Triggers: Identifying and avoiding triggers, such as certain soaps, detergents, allergens, and irritants. Wet Wrap Therapy: In severe cases, wet wrap therapy can help retain moisture and improve the effectiveness of topical treatments. Phototherapy: In certain cases, exposure to controlled UV light may be considered. Systemic Medications: For severe and unresponsive cases, systemic immunosuppressive medications may be prescribed under medical supervision. Eczema is a chronic condition that often requires a personalized treatment plan under the guidance of a dermatologist or healthcare professional. The goal of treatment is to manage symptoms, reduce inflammation, and prevent flare-ups while improving the patient's quality of life.");
-                } else if (imageData=Psoriasis){
-                    alert("Description: Psoriasis is a chronic skin condition characterized by red, scaly patches on the skin. It is thought to be an autoimmune disorder, and it can be influenced by genetic factors. Treatment Response: Treatment options include: Topical Treatments: Corticosteroids, vitamin D analogs, or calcineurin inhibitors. Phototherapy: Exposure to ultraviolet light. Systemic Medications: For severe cases, including biologic drugs. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if (imageData=BenignKeratosis-likeLesions){
-                    alert("Description: Benign keratosis-like lesions are non-cancerous growths that often appear as scaly or rough patches on the skin. They are typically harmless. Treatment Response: Generally, no treatment is needed. These growths are considered benign and are typically left alone unless there are cosmetic concerns. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if(imageData=MelanocyticNevi){
-                    alert("Description: Moles are common skin growths that can be brown, black, or flesh-colored. Most moles are benign and harmless, but changes in size, shape, or color should be monitored. Treatment Response: Usually, no treatment is required for normal moles. If there are any concerning changes, consult a dermatologist. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if(imageData=BasalCellCarcinoma){
-                    alert("Description: Basal cell carcinoma is a common type of skin cancer that often appears as a shiny bump or open sore. It is the least aggressive form of skin cancer. Treatment Response: Treatment typically involves surgical removal, such as excision or Mohs surgery. The prognosis is excellent if detected early. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if(imageData= SeborrheicKeratosesandotherBenignTumors){
-                    alert("Description: Seborrheic keratoses are non-cancerous skin growths that can appear as brown, black, or pale growths. They are typically raised and have a waxy appearance. Treatment Response: Generally, no treatment is required. They can be removed for cosmetic reasons, but this is usually optional. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
-                } else if(imageData=TineaRingwormCandidiasisandotherFungalInfections){
-                    alert("Description: Fungal skin infections, such as ringworm and candidiasis, can cause itching, redness, and rashes on the skin. Treatment Response: Treatment typically involves antifungal creams or oral medications. Keeping the affected area clean and dry is also important to prevent recurrence. Remember, it's essential to consult a dermatologist for a proper diagnosis and tailored treatment plan if you suspect any skin condition or experience changes in your skin. The provided information is for general reference and should not substitute professional medical advice.");
+<head>
+    <title>DermaScan</title>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <div class="banner">
+        <div class="navbar">
+            <img src="http://imageshack.com/i/po11ErGdp" class="logo">
+            <ul>
+                <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
+                <li><a href="http://127.0.0.1:5500/.vscode/aboutIndex.html">About</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <style>
+                h1 {
+                    font-family: 'monospace';
                 }
-            }
-        });
+            </style>
+            <h1>DermaScan</h1>
+            <p>Dermascan is an AI tool that diagnoses skin conditions by analyzing<br> user-submitted photos or links, matching them to a comprehensive database,<br> and offering treatment options and skincare information for better skin health.</p>
+            <button type="button" id="uploadButton"><span></span>Upload your Image</button>
+            <a href="http://127.0.0.1:5500/.vscode/submitIndex2.html"></a>
+            <button type="button" id="submitButton"><span></span>Submit</button>
+            <input type="file" id="fileInput" style="display: none;">
+            <div id="previewContainer">
+                <img id="previewImage">
+            </div>
+        </div>
+        <script>
+            /* for passing the image to the AI later */
+            let imageData = null;
+            document.getElementById('uploadButton').addEventListener('click', function () {
+                document.getElementById('fileInput').click();
+            });
+            document.getElementById('fileInput').addEventListener('change', function () {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const image = document.getElementById('previewImage');
+                        image.src = e.target.result;
+                        image.style.display = 'block';
+                        imageData = e.target.result;
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
 
-                    </script>
-                </div>
-            
-    </body>
+            document.getElementById('submitButton').addEventListener('click', function() {
+                // You can add your AI processing logic here
+                if (imageData) {
+                    // Example: Checking if the image has a skin disease (replace with your AI logic)
+                    const hasSkinDisease = true;
+                    
+                    // Redirect to the specified website when the "Submit" button is clicked
+                    window.location.href = "http://127.0.0.1:5500/.vscode/submitIndex2.html";
+                } else {
+                    alert("Please upload an image first.");
+                }
+            });
+        </script>
+    </div>
+</body>
 </html>
