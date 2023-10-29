@@ -54,6 +54,7 @@
     transform: translateY(-50%);
     text-align: center;
     color: #fff;
+    text-underline-position: below;
 }
 .content h1{
     font-size: 95px;
