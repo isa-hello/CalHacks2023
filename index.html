@@ -23,7 +23,7 @@
                     <p>Dermascan is an AI tool that diagnoses skin conditions by analyzing<br> user-submitted photos or links, matching them to a comprehensive database,<br> and offering treatment options and skincare information for better skin health.</p>
             
                     <button type = "button" id ="uploadButton"><span></span>Upload your Image</button>
-                    <a href="http://127.0.0.1:5500/CalHacks2023/.vscode/submitIndex.html">
+                    <a href="http://127.0.0.1:5500/CalHacks2023/.vscode/submitIndex.html"></a>
                     <button type = "button"><span></span>Submit</button>
 
                     <input type="file" id="fileInput" style="display: none;">
@@ -47,7 +47,7 @@
                                 reader.onload = function(e) {
                                     const image = document.getElementById('previewImage');
                                     image.src = e.target.result;
-                                    image.style.display = 'block';
+                                    image.style.display = 'block';g
 
                                     imageData = e.target.result;
                                 }
@@ -55,11 +55,36 @@
                             }
                         });
 
-                        /*function sendToAI() {
-                            if (imageData) {
-                                fetch()
-                            }
-                        }*/
+                        document.getElementById('submitButton').addEventListener('click', function() {
+            // You can add your AI processing logic here
+            if (imageData) {
+                // Example: Checking if the image has a skin disease (replace with your AI logic)
+                const hasSkinDisease = true;
+
+                if (imageData=Eczema) {
+                    alert("stand in");
+                } else if (imageData=WartsMolluscum){
+                    alert("stand in");
+                } else if (imageData=Melanoma){
+                    alert("stand in");
+                } else if (imageData=AtopicDermatitis){
+                    alert("stand in");
+                } else if (imageData=Psoriasis){
+                    alert("stand in");
+                } else if (imageData=BenignKeratosis-likeLesions){
+                    alert("stand in");
+                } else if(imageData=MelanocyticNevi){
+                    alert("stand in");
+                } else if(imageData=BasalCellCarcinoma){
+                    alert("stand in");
+                } else if(imageData= SeborrheicKeratosesandotherBenignTumors){
+                    alert("stand in");
+                } else if(imageData=TineaRingwormCandidiasisandotherFungalInfections){
+                    alert("stand in");
+                }
+            }
+        });
+
                     </script>
                 </div>
             
