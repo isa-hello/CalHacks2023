@@ -82,3 +82,46 @@ body {
     line-height: 1.6; /* Adjust line height as needed */
     font-family: sans-serif; /* Set font-family to fantasy */
 }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Set the background color as needed */
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem; /* Adjust the font size as needed */
+    line-height: 1.5;
+  }
+  
+  button {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem; /* Adjust the font size as needed */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  #previewContainer {
+    text-align: center;
+  }
+  
+  #previewImage {
+    max-width: 300px;
+    max-height: 300px;
+    display: none;
+    margin: 0 auto; /* This will center the image */
+  }
