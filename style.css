@@ -101,3 +101,12 @@ body {
     height: 100vh;
     background: linear-gradient(to bottom, yellow 50%, yellow 50%);
 }
+#previewContainer {
+    text-align: center;
+}
+#previewImage {
+    max-width: 300px;
+    max-height: 300px;
+    display: none;
+    margin: 0 auto; /* This will center the image */
+}

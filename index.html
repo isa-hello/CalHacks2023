@@ -23,12 +23,19 @@
                     <p>Dermascan is an AI tool that diagnoses skin conditions by analyzing<br> user-submitted photos or links, matching them to a comprehensive database,<br> and offering treatment options and skincare information for better skin health.</p>
             
                     <button type = "button" id ="uploadButton"><span></span>Upload your Image</button>
-                    <a href="http://127.0.0.1:5500/.vscode/submitIndex.html">
+                    <a href="http://127.0.0.1:5500/CalHacks2023/.vscode/submitIndex.html">
                     <button type = "button"><span></span>Submit</button>
+
                     <input type="file" id="fileInput" style="display: none;">
-                    <img id="previewImage" style="display: none; max-width: 300px; max-height: 300px;">
+                    <div id="previewContainer">
+                        <img id="previewImage">
+                    </div>
                     
                     <script>
+                        /*for passing the image to the AI later*/
+                        let imageData = null;
+
+
                         document.getElementById('uploadButton').addEventListener('click', function() {
                             document.getElementById('fileInput').click();
                         });
@@ -41,10 +48,18 @@
                                     const image = document.getElementById('previewImage');
                                     image.src = e.target.result;
                                     image.style.display = 'block';
+
+                                    imageData = e.target.result;
                                 }
                                 reader.readAsDataURL(file);
                             }
                         });
+
+                        /*function sendToAI() {
+                            if (imageData) {
+                                fetch()
+                            }
+                        }*/
                     </script>
                 </div>
             
