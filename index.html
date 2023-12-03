@@ -1,67 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DermaScan</title>
-</head>
-<body>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      h1 {
+        font-family: "monospace";
+      }
+    </style>
+  </head>
+  <body>
     <div class="banner">
-        <div class="navbar">
-            <img src="http://imageshack.com/i/po11ErGdp" class="logo">
-            <ul>
-                <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
-                <li><a href="http://127.0.0.1:5500/.vscode/aboutIndex.html">About</a></li>
-            </ul>
+      <div class="navbar">
+        <img src="http://imageshack.com/i/po11ErGdp" alt="Logo" class="logo" />
+        <ul>
+          <li><a href="http://127.0.0.1:5500/index.html">Home</a></li>
+          <li>
+            <a href="http://127.0.0.1:5500/.vscode/aboutIndex.html">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h1>Skintelligence</h1>
+        <p>
+          Skintelligence is an AI tool that diagnoses skin conditions by
+          analyzing<br />
+          user-submitted photos or links, matching them to a comprehensive
+          database,<br />
+          and offering treatment options and skincare information for better
+          skin health.
+        </p>
+        <button type="button" id="uploadButton">Upload your Image</button>
+        <button type="button" id="submitButton">Submit</button>
+        <input type="file" id="fileInput" style="display: none" />
+        <div id="previewContainer">
+          <img id="previewImage" style="display: none" />
         </div>
-        <div class="content">
-            <style>
-                h1 {
-                    font-family: 'monospace';
-                }
-            </style>
-            <h1>Skintelligence</h1>
-            <p>Skintelligence is an AI tool that diagnoses skin conditions by analyzing<br> user-submitted photos or links, matching them to a comprehensive database,<br> and offering treatment options and skincare information for better skin health.</p>
-            <button type="button" id="uploadButton"><span></span>Upload your Image</button>
-            <a href="http://127.0.0.1:5500/.vscode/submitIndex2.html"></a>
-            <button type="button" id="submitButton"><span></span>Submit</button>
-            <input type="file" id="fileInput" style="display: none;">
-            <div id="previewContainer">
-                <img id="previewImage">
-            </div>
-        </div>
-        <script>
-            /* for passing the image to the AI later */
-            let imageData = null;
-            document.getElementById('uploadButton').addEventListener('click', function () {
-                document.getElementById('fileInput').click();
-            });
-            document.getElementById('fileInput').addEventListener('change', function () {
-                const file = this.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        const image = document.getElementById('previewImage');
-                        image.src = e.target.result;
-                        image.style.display = 'block';
-                        imageData = e.target.result;
-                    }
-                    reader.readAsDataURL(file);
-                }
-            });
-
-            document.getElementById('submitButton').addEventListener('click', function() {
-                // You can add your AI processing logic here
-                if (imageData) {
-                    // Example: Checking if the image has a skin disease (replace with your AI logic)
-                    const hasSkinDisease = true;
-                    
-                    // Redirect to the specified website when the "Submit" button is clicked
-                    window.location.href = "http://127.0.0.1:5500/.vscode/submitIndex2.html";
-                } else {
-                    alert("Please upload an image first.");
-                }
-            });
-        </script>
+      </div>
     </div>
-</body>
+
+    <script>
+      let imageData = null;
+
+      document
+        .getElementById("uploadButton")
+        .addEventListener("click", function () {
+          document.getElementById("fileInput").click();
+        });
+
+      document
+        .getElementById("fileInput")
+        .addEventListener("change", function () {
+          const file = this.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const image = document.getElementById("previewImage");
+              image.src = e.target.result;
+              image.style.display = "block";
+              imageData = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+
+      document
+        .getElementById("submitButton")
+        .addEventListener("click", function () {
+          if (imageData) {
+            const hasSkinDisease = true; // Replace with your AI logic
+            window.location.href =
+              "http://127.0.0.1:5500/.vscode/submitIndex2.html";
+          } else {
+            alert("Please upload an image first.");
+          }
+        });
+    </script>
+  </body>
 </html>
